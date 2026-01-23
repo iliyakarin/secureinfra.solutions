@@ -1,0 +1,64 @@
+---
+import ServiceCard from "./ServiceCard.astro";
+import { Terminal, ShieldCheck, Users } from "lucide-react";
+
+const services = [
+    {
+        title: "DevOps Transformation",
+        description:
+            "Modernize your infrastructure and automate delivery pipelines for maximum velocity and reliability.",
+        icon: Terminal,
+        features: [
+            "CI/CD Pipeline Automation",
+            "Infrastructure as Code (IaC)",
+            "Cloud Native Architecture",
+        ],
+    },
+    {
+        title: "Security & Compliance",
+        description:
+            "Institutionalize security at every layer of your stack with automated compliance and hardened infrastructure.",
+        icon: ShieldCheck,
+        features: [
+            "Pentesting & Vulnerability Analysis",
+            "DevSecOps Integration",
+            "SOC2/ISO27001 Readiness",
+        ],
+    },
+    {
+        title: "Strategic Outstaffing",
+        description:
+            "Augment your existing teams with dedicated, high-seniority DevOps and Security engineers.",
+        icon: Users,
+        features: [
+            "Dedicated Engineer Integration",
+            "Long-term Team Augmentation",
+            "Expert Domain Specialization",
+        ],
+    },
+];
+---
+
+<section id="services" class="py-24 md:py-32">
+    <div class="container mx-auto px-6">
+        <div class="max-w-3xl mb-16">
+            <h2
+                class="text-emerald-500 font-semibold tracking-wider uppercase text-sm mb-4"
+            >
+                Core Expertise
+            </h2>
+            <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Built for scale. Hardened for production.
+            </h3>
+            <p class="text-lg text-slate-400">
+                We don't just consult; we execute. Our services are designed to
+                bridge the gap between complex infrastructure challenges and
+                seamless delivery.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            {services.map((service) => <ServiceCard {...service} />)}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,118 @@
+---
+import { CheckCircle2 } from "lucide-react";
+---
+
+<section id="outstaffing" class="py-24 md:py-32 bg-slate-900/30">
+    <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2
+                    class="text-emerald-500 font-semibold tracking-wider uppercase text-sm mb-4"
+                >
+                    Outstaffing Model
+                </h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white mb-8">
+                    Seamless Integration. Scalable Talent.
+                </h3>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed">
+                    Stop searching and start building. We provide dedicated
+                    engineers who integrate directly into your internal
+                    workflows, communication channels (Slack, Jira), and
+                    culture.
+                </p>
+
+                <div class="space-y-6">
+                    {
+                        [
+                            {
+                                title: "Embedded Experts",
+                                desc: "Engineers who work exclusively on your product.",
+                            },
+                            {
+                                title: "Cross-Functional Sync",
+                                desc: "Full participation in your sprints and dailies.",
+                            },
+                            {
+                                title: "Flexible Scaling",
+                                desc: "Scale your team up or down with 30-day notice.",
+                            },
+                            {
+                                title: "Technical Leadership",
+                                desc: "Access to our senior leads for high-level strategy.",
+                            },
+                        ].map((item) => (
+                            <div class="flex gap-4">
+                                <CheckCircle2 className="w-6 h-6 text-emerald-500 flex-shrink-0" />
+                                <div>
+                                    <h4 class="text-white font-bold mb-1">
+                                        {item.title}
+                                    </h4>
+                                    <p class="text-slate-400 text-sm">
+                                        {item.desc}
+                                    </p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <div class="relative">
+                <div
+                    class="absolute -inset-4 bg-emerald-500/10 blur-3xl rounded-full -z-10"
+                >
+                </div>
+                <div
+                    class="bg-slate-950 border border-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl"
+                >
+                    <div class="space-y-8">
+                        <div
+                            class="flex items-center gap-4 border-b border-slate-800 pb-8"
+                        >
+                            <div
+                                class="w-12 h-12 rounded-full bg-slate-800 animate-pulse"
+                            >
+                            </div>
+                            <div class="flex-1 space-y-2">
+                                <div
+                                    class="h-4 bg-slate-800 rounded w-1/3 animate-pulse"
+                                >
+                                </div>
+                                <div
+                                    class="h-3 bg-slate-800 rounded w-1/2 animate-pulse"
+                                >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div
+                                class="h-3 bg-slate-800 rounded w-full animate-pulse"
+                            >
+                            </div>
+                            <div
+                                class="h-3 bg-slate-800 rounded w-5/6 animate-pulse"
+                            >
+                            </div>
+                            <div
+                                class="h-3 bg-slate-800 rounded w-4/6 animate-pulse"
+                            >
+                            </div>
+                        </div>
+                        <div
+                            class="pt-4 flex justify-between items-center text-xs font-mono text-emerald-500"
+                        >
+                            <span>$ git merge remote-talent</span>
+                            <span class="text-slate-500">Just now</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simple decorative element -->
+                <div
+                    class="absolute -bottom-6 -right-6 w-32 h-32 bg-indigo-500/20 blur-2xl rounded-full -z-10"
+                >
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

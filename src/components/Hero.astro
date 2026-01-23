@@ -1,0 +1,107 @@
+---
+import { ArrowRight, Terminal, Lock, Users, Shield } from "lucide-react";
+---
+
+<section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+    <!-- Background Accents -->
+    <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 -z-10 w-full max-w-6xl aspect-[2/1] bg-emerald-500/10 blur-[120px] rounded-full"
+    >
+    </div>
+
+    <div class="container mx-auto px-6 text-center">
+        <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-medium text-emerald-400 mb-8 animate-fade-in"
+        >
+            <span class="relative flex h-2 w-2">
+                <span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
+                ></span>
+                <span
+                    class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"
+                ></span>
+            </span>
+            Available for Q1 2026 Projects
+        </div>
+
+        <h1
+            class="text-5xl md:text-7xl font-bold tracking-tight text-white mb-8 max-w-4xl mx-auto leading-[1.1]"
+        >
+            Hardened Infrastructure. <br />
+            <span
+                class="bg-gradient-to-r from-emerald-400 to-indigo-400 bg-clip-text text-transparent"
+                >Scalable Teams.</span
+            >
+        </h1>
+
+        <p
+            class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed"
+        >
+            Expert DevOps and Security consulting to accelerate your delivery.
+            We build resilient systems and integrate world-class talent into
+            your organization.
+        </p>
+
+        <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+            <a
+                href="#contact"
+                class="w-full sm:w-auto px-8 py-4 bg-white text-slate-950 rounded-full font-bold hover:bg-slate-200 transition-all flex items-center justify-center gap-2 group"
+            >
+                Get Started
+                <ArrowRight
+                    className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                />
+            </a>
+            <a
+                href="#services"
+                class="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white border border-slate-800 rounded-full font-bold hover:bg-slate-800 transition-all flex items-center justify-center gap-2"
+            >
+                View Services
+            </a>
+        </div>
+
+        <div
+            class="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-700"
+        >
+            <!-- Placeholder for client logos or tech stack -->
+            <div class="flex items-center justify-center gap-2">
+                <Terminal className="w-6 h-6" />
+                <span class="font-bold text-xl tracking-tighter">TERRAFORM</span
+                >
+            </div>
+            <div class="flex items-center justify-center gap-2">
+                <Lock className="w-6 h-6" />
+                <span class="font-bold text-xl tracking-tighter"
+                    >KUBERNETES</span
+                >
+            </div>
+            <div class="flex items-center justify-center gap-2">
+                <Users className="w-6 h-6" />
+                <span class="font-bold text-xl tracking-tighter">AWS/AZURE</span
+                >
+            </div>
+            <div class="flex items-center justify-center gap-2">
+                <Shield className="w-6 h-6" />
+                <span class="font-bold text-xl tracking-tighter">ISO27001</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .animate-fade-in {
+        animation: fade-in 0.8s ease-out forwards;
+    }
+</style>
