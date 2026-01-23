@@ -60,16 +60,23 @@ import { Send } from "lucide-react";
                     method="POST"
                     class="space-y-4"
                 >
+                    <!-- Formspree Subject -->
+                    <input
+                        type="hidden"
+                        name="_subject"
+                        value="New Inquiry from SecureInfra website"
+                    />
+
                     <div class="grid sm:grid-cols-2 gap-4">
                         <div class="space-y-2">
                             <label
-                                for="name"
+                                for="full-name"
                                 class="text-xs font-bold uppercase tracking-wider text-slate-500 ml-1"
-                                >Name</label
+                                >Your Name</label
                             >
                             <input
                                 type="text"
-                                id="name"
+                                id="full-name"
                                 name="name"
                                 placeholder="John Doe"
                                 class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder:text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all text-sm"
@@ -94,13 +101,13 @@ import { Send } from "lucide-react";
 
                     <div class="space-y-2">
                         <label
-                            for="email"
+                            for="email-address"
                             class="text-xs font-bold uppercase tracking-wider text-slate-500 ml-1"
-                            >Business Email</label
+                            >Your Email</label
                         >
                         <input
                             type="email"
-                            id="email"
+                            id="email-address"
                             name="email"
                             placeholder="john@company.com"
                             class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder:text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all text-sm"
@@ -110,12 +117,12 @@ import { Send } from "lucide-react";
 
                     <div class="space-y-2">
                         <label
-                            for="message"
+                            for="project-message"
                             class="text-xs font-bold uppercase tracking-wider text-slate-500 ml-1"
-                            >Project Description</label
+                            >Your Message</label
                         >
                         <textarea
-                            id="message"
+                            id="project-message"
                             name="message"
                             rows="4"
                             placeholder="Tell us about your infrastructure or outstaffing needs..."
@@ -127,7 +134,7 @@ import { Send } from "lucide-react";
                         type="submit"
                         class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 group mt-2"
                     >
-                        Send Message
+                        Send message
                         <Send
                             className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
                         />
