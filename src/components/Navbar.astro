@@ -18,17 +18,17 @@ import { Shield } from "lucide-react";
         <nav class="hidden md:flex items-center gap-8">
             <a
                 href="#services"
-                class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                class="nav-link text-sm font-medium text-slate-400 hover:text-white transition-colors"
                 >Services</a
             >
             <a
                 href="#outstaffing"
-                class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                class="nav-link text-sm font-medium text-slate-400 hover:text-white transition-colors"
                 >Outstaffing</a
             >
             <a
                 href="#contact"
-                class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                class="nav-link text-sm font-medium text-slate-400 hover:text-white transition-colors"
                 >Contact</a
             >
         </nav>
@@ -64,3 +64,80 @@ import { Shield } from "lucide-react";
         </div>
     </div>
 </header>
+
+<style>
+    .nav-link.active {
+        color: white;
+        position: relative;
+    }
+    .nav-link.active::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #10b981;
+        border-radius: 1px;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const navLinks = document.querySelectorAll(".nav-link");
+        const sections = document.querySelectorAll("section[id]");
+
+        function clearActive() {
+            navLinks.forEach((link) => link.classList.remove("active"));
+        }
+
+        function setActive(id: string) {
+            clearActive();
+            const activeLink = document.querySelector(
+                `.nav-link[href="#${id}"]`,
+            );
+            if (activeLink) activeLink.classList.add("active");
+        }
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                // Find the entry with the largest intersection ratio
+                let bestEntry: IntersectionObserverEntry | null = null;
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        if (
+                            !bestEntry ||
+                            entry.intersectionRatio >
+                                bestEntry.intersectionRatio
+                        ) {
+                            bestEntry = entry;
+                        }
+                    }
+                });
+
+                if (bestEntry) {
+                    setActive(
+                        (bestEntry as IntersectionObserverEntry).target.id,
+                    );
+                }
+            },
+            {
+                rootMargin: "-20% 0px -60% 0px",
+                threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5],
+            },
+        );
+
+        sections.forEach((section) => observer.observe(section));
+
+        // Also highlight on click
+        navLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                const href = link.getAttribute("href");
+                if (href) {
+                    clearActive();
+                    link.classList.add("active");
+                }
+            });
+        });
+    });
+</script>
